@@ -6,43 +6,55 @@ const greenLightId = document.getElementById("greenLight");
 const redLightId = document.getElementById("redLight");
 
 const defaultLights = (window.onload = function () {
-  redLightId.style.backgroundColor = "black";
-  greenLightId.style.backgroundColor = "black";
-  yellowLightId.style.backgroundColor = "black";
+  redLightId.style.backgroundColor = "#000";
+  greenLightId.style.backgroundColor = "#000";
+  yellowLightId.style.backgroundColor = "#000";
 });
 
 redLightButton.addEventListener("click", function () {
-  redLightId.style.backgroundColor == "black"
-    ? (redLightId.style.backgroundColor = "red")
-    : (redLightId.style.backgroundColor = "black");
-  if (greenLightId.style.backgroundColor == "green") {
-    greenLightId.style.backgroundColor = "black";
+  redLightId.style.backgroundColor = "#000"
+    ? (redLightId.style.backgroundColor = "#ff0000")
+    : (redLightId.style.backgroundColor = "#000");
+  if (!(greenLightId.style.backgroundColor = "#00b807")) {
+    debugger;
+  } else {
+    greenLightId.style.backgroundColor = "#000";
   }
-  if (yellowLightId.style.backgroundColor == "yellow") {
-    yellowLightId.style.backgroundColor = "black";
+  if (!(yellowLightId.style.backgroundColor = "#fab005")) {
+    debugger;
+  } else {
+    yellowLightId.style.backgroundColor = "#000";
   }
 });
 
 greenLightButton.addEventListener("click", function () {
-  greenLightId.style.backgroundColor == "black"
-    ? (greenLightId.style.backgroundColor = "green")
-    : (greenLightId.style.backgroundColor = "black");
-  if (yellowLightId.style.backgroundColor == "yellow") {
-    yellowLightId.style.backgroundColor = "black";
+  greenLightId.style.backgroundColor = "#000"
+    ? (greenLightId.style.backgroundColor = "#00b807")
+    : (greenLightId.style.backgroundColor = "#000");
+  if (!(yellowLightId.style.backgroundColor = "#fab005")) {
+    debugger;
+  } else {
+    yellowLightId.style.backgroundColor = "#000";
   }
-  if (redLightId.style.backgroundColor == "red") {
-    redLightId.style.backgroundColor = "black";
+  if (!(redLightId.style.backgroundColor = "#ff0000")) {
+    debugger;
+  } else {
+    redLightId.style.backgroundColor = "#000";
   }
 });
 
 yellowLightButton.addEventListener("click", function () {
-  yellowLightId.style.backgroundColor == "black"
-    ? (yellowLightId.style.backgroundColor = "yellow")
-    : (yellowLightId.style.backgroundColor = "black");
-  if (redLightId.style.backgroundColor == "red") {
-    redLightId.style.backgroundColor = "black";
+  yellowLightId.style.backgroundColor = "#000"
+    ? (yellowLightId.style.backgroundColor = "#fab005")
+    : (yellowLightId.style.backgroundColor = "#000");
+  if (!(redLightId.style.backgroundColor = "#ff0000")) {
+    debugger;
+  } else {
+    redLightId.style.backgroundColor = "#000";
   }
-  if (greenLightId.style.backgroundColor == "green") {
-    greenLightId.style.backgroundColor = "black";
+  if (!(greenLightId.style.backgroundColor = "#00b807")) {
+    debugger;
+  } else {
+    greenLightId.style.backgroundColor = "#000";
   }
 });

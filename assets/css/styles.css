@@ -6,6 +6,7 @@
   margin: auto;
   margin-top: 10px;
   border: solid 2px;
+  box-shadow: -0 -4px 0 1px;
 }
 
 #yellowLight {
@@ -16,6 +17,7 @@
   margin: auto;
   margin-top: 10px;
   border: solid 2px;
+  box-shadow: -0 -4px 0 1px;
 }
 
 #redLight {
@@ -26,6 +28,7 @@
   margin: auto;
   margin-top: 10px;
   border: solid 2px;
+  box-shadow: -0 -4px 0 1px;
 }
 
 #greenLightBtn {
@@ -50,6 +53,7 @@
 }
 
 #trafficBody {
+  margin: auto;
   background: #67717b;
   width: 90px;
   padding-top: 10px;

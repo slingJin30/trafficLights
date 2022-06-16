@@ -16,12 +16,10 @@ redLightButton.addEventListener("click", function () {
     ? (redLightId.style.backgroundColor = "#ff0000")
     : (redLightId.style.backgroundColor = "#000");
   if (!(greenLightId.style.backgroundColor = "#00b807")) {
-    debugger;
   } else {
     greenLightId.style.backgroundColor = "#000";
   }
   if (!(yellowLightId.style.backgroundColor = "#fab005")) {
-    debugger;
   } else {
     yellowLightId.style.backgroundColor = "#000";
   }
@@ -32,12 +30,10 @@ greenLightButton.addEventListener("click", function () {
     ? (greenLightId.style.backgroundColor = "#00b807")
     : (greenLightId.style.backgroundColor = "#000");
   if (!(yellowLightId.style.backgroundColor = "#fab005")) {
-    debugger;
   } else {
     yellowLightId.style.backgroundColor = "#000";
   }
   if (!(redLightId.style.backgroundColor = "#ff0000")) {
-    debugger;
   } else {
     redLightId.style.backgroundColor = "#000";
   }
@@ -48,12 +44,10 @@ yellowLightButton.addEventListener("click", function () {
     ? (yellowLightId.style.backgroundColor = "#fab005")
     : (yellowLightId.style.backgroundColor = "#000");
   if (!(redLightId.style.backgroundColor = "#ff0000")) {
-    debugger;
   } else {
     redLightId.style.backgroundColor = "#000";
   }
   if (!(greenLightId.style.backgroundColor = "#00b807")) {
-    debugger;
   } else {
     greenLightId.style.backgroundColor = "#000";
   }

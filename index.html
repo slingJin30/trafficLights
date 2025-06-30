@@ -6,31 +6,87 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <title>Traffic Lights</title>
+    <title>Traffic Lights Pro</title> <!-- Updated Title -->
   </head>
 
   <body>
-    <header>
-      <h1>Traffic Lights</h1>
+    <header class="bg-dark text-white text-center py-3 mb-4">
+      <div class="container">
+        <h1>Traffic Lights Pro 🚦</h1>
+      </div>
     </header>
-    <main>
-      <section class="traffic-light-section">
-        <div id="trafficBody">
-          <div id="redLight" class="light"></div>
-          <div id="yellowLight" class="light"></div>
-          <div id="greenLight" class="light"></div>
+
+    <main class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+          <section class="traffic-light-section text-center mb-4">
+            <div id="trafficBody" class="mx-auto">
+              <div id="redLight" class="light"></div>
+              <div id="yellowLight" class="light"></div>
+              <div id="greenLight" class="light"></div>
+            </div>
+          </section>
+
+          <nav class="controls text-center mb-4">
+            <div class="btn-group" role="group" aria-label="Traffic light manual controls">
+              <button id="greenLightBtn" type="button" class="btn btn-success btn-lg">Green</button>
+              <button id="yellowLightBtn" type="button" class="btn btn-warning btn-lg">Yellow</button>
+              <button id="stopLightBtn" type="button" class="btn btn-danger btn-lg">Red</button>
+            </div>
+          </nav>
         </div>
-      </section>
-      <nav class="controls">
-        <button id="greenLightBtn" type="button">Green Light</button>
-        <button id="yellowLightBtn" type="button">Yellow Light</button>
-        <button id="stopLightBtn" type="button">Red Light</button>
-      </nav>
+      </div>
+
+      <div id="featureControls" class="row justify-content-center mt-3">
+        <div class="col-md-8 col-lg-6">
+          <!-- Automatic Sequencing Controls -->
+          <div class="card mb-3">
+            <div class="card-body text-center">
+              <h5 class="card-title">Automatic Mode</h5>
+              <div class="btn-group" role="group" aria-label="Automatic mode controls">
+                <button id="startAutoBtn" type="button" class="btn btn-primary">Start Auto</button>
+                <button id="stopAutoBtn" type="button" class="btn btn-secondary" disabled>Stop Auto</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pedestrian Signal (Placeholder Structure) -->
+          <div id="pedestrianSignalSection" class="card mb-3"> <!-- Made visible for development -->
+            <div class="card-body text-center">
+              <h5 class="card-title">Pedestrian Signal</h5>
+              <div id="pedestrianLight" class="ped-light ped-dont-walk">DON'T WALK</div>
+              {/* <!-- JS will toggle class to 'ped-walk' or 'ped-flash-dont-walk' --> */}
+            </div>
+          </div>
+
+          <!-- Special Modes -->
+          <div id="specialModesSection" class="card"> <!-- Made visible -->
+            <div class="card-body text-center">
+              <h5 class="card-title">Special Modes</h5>
+              <div class="btn-group" role="group" aria-label="Special mode controls">
+                <button id="flashYellowBtn" type="button" class="btn btn-outline-warning">Flash Yellow</button>
+                <button id="flashRedBtn" type="button" class="btn btn-outline-danger">Flash Red</button>
+                <button id="allOffBtn" type="button" class="btn btn-outline-secondary">All Off</button>
+                <button id="resumeNormalBtn" type="button" class="btn btn-outline-primary" style="display: none;">Resume Normal</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </main>
-    <footer>
-      <p>&copy; 2024 Traffic Light Simulator</p>
+
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+      <div class="container">
+        <p>&copy; 2024 Traffic Light Pro Simulator. Upgraded with Bootstrap!</p>
+      </div>
     </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>

@@ -1,145 +1,150 @@
+/* Custom styles to complement Bootstrap and style the traffic light */
+
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  box-sizing: border-box;
+  /* Bootstrap's default font-family is generally good.
+     Set a background color for the page if needed, Bootstrap uses a light grey by default. */
+  background-color: #e9ecef; /* A slightly different light grey for contrast if desired */
+  display: flex; /* Added to make footer stick to bottom */
+  flex-direction: column; /* Added to make footer stick to bottom */
+  min-height: 100vh; /* Added to make footer stick to bottom */
 }
 
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 1em 0;
-  text-align: center;
-  width: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+/* Header and Footer are styled by Bootstrap classes in HTML */
 
-header h1 {
-  margin: 0;
-  font-size: 2em;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  width: 100%;
-  max-width: 600px; /* Max width for content area */
-  box-sizing: border-box;
-}
-
-.traffic-light-section {
-  margin-bottom: 30px;
-}
-
+/* Traffic Light Specific Styles */
 #trafficBody {
-  background: #4a4a4a; /* Darker grey for traffic light body */
-  width: 100px; /* Slightly wider */
-  padding: 15px 10px; /* Adjusted padding */
-  border-radius: 30px; /* More rounded */
-  height: auto; /* Auto height based on content */
-  border: 3px solid #222; /* Darker border */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0,0,0,0.5); /* Softer outer shadow, inner shadow for depth */
+  background: #343a40; /* Bootstrap's dark grey, or a custom dark color */
+  width: 100px;
+  padding: 20px 10px;
+  border-radius: 25px;
+  border: 3px solid #212529; /* Bootstrap's darker grey */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(0,0,0,0.6);
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Space between lights */
+  gap: 15px; /* Increased gap for larger lights */
+  margin-bottom: 2rem; /* Add some space below the traffic light */
 }
 
 .light {
-  width: 70px;  /* Larger lights */
+  width: 70px;
   height: 70px;
-  border-radius: 50%; /* Perfectly round */
-  margin: auto;
-  border: 2px solid #111; /* Darker border for lights */
-  background-color: #2b2b2b; /* Default off state - dark grey */
-  box-shadow: inset 0 3px 5px rgba(0,0,0,0.5), 0 1px 1px rgba(255,255,255,0.2); /* Inner shadow for depth, slight highlight */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  border-radius: 50%;
+  margin: auto; /* Center lights within #trafficBody */
+  border: 2px solid #1a1a1a;
+  background-color: #202020; /* Default "off" state - very dark grey */
+  box-shadow: inset 0 4px 7px rgba(0,0,0,0.6), 0 1px 2px rgba(255,255,255,0.15);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Specific light colors when active - will be controlled by JS */
+/* Active light states with glow effect */
 #redLight.active {
-  background-color: #ff0000;
-  box-shadow: inset 0 3px 5px rgba(0,0,0,0.5), 0 0 20px #ff0000, 0 0 30px #ff0000; /* Added glow effect */
+  background-color: #dc3545; /* Bootstrap danger red */
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.5),
+              0 0 25px #dc3545,
+              0 0 35px #dc3545,
+              0 0 45px rgba(220, 53, 69, 0.7); /* Softer outer glow */
 }
 
 #yellowLight.active {
-  background-color: #fab005;
-  box-shadow: inset 0 3px 5px rgba(0,0,0,0.5), 0 0 20px #fab005, 0 0 30px #fab005; /* Added glow effect */
+  background-color: #ffc107; /* Bootstrap warning yellow */
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.5),
+              0 0 25px #ffc107,
+              0 0 35px #ffc107,
+              0 0 45px rgba(255, 193, 7, 0.7);
 }
 
 #greenLight.active {
-  background-color: #00b807;
-  box-shadow: inset 0 3px 5px rgba(0,0,0,0.5), 0 0 20px #00b807, 0 0 30px #00b807; /* Added glow effect */
+  background-color: #198754; /* Bootstrap success green */
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.5),
+              0 0 25px #198754,
+              0 0 35px #198754,
+              0 0 45px rgba(25, 135, 84, 0.7);
+}
+
+/* Control buttons are primarily styled by Bootstrap classes in HTML.
+   The .btn-group in HTML will handle their layout.
+   We can add margin if needed, but Bootstrap's utilities (like mb-3) are preferred.
+*/
+.controls .btn-group .btn {
+  /* Example: If you need to override something specific for all buttons in this group */
+  /* font-weight: bold; */ /* Bootstrap buttons are already bold */
+  padding: 0.75rem 1.5rem; /* Adjust padding for btn-lg if needed */
 }
 
 
-.controls {
-  display: flex;
-  gap: 15px; /* Space between buttons */
-  margin-top: 20px;
-  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-  justify-content: center;
+/* Placeholder for future feature controls styling if needed */
+#featureControls .card {
+  margin-top: 1rem;
 }
 
-.controls button {
-  padding: 12px 25px; /* Larger padding */
-  font-size: 1.1em; /* Slightly larger font */
-  border-radius: 8px; /* Rounded corners */
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+#featureControls h5 {
+  margin-bottom: 1rem;
+}
+
+/* Ensure footer is at the bottom even with less content */
+/* main {
+  flex: 1;
+} */
+/* This is handled by body flex properties now */
+
+
+/* No specific responsive adjustments needed here for now,
+   as Bootstrap's grid and button components are inherently responsive.
+   If #trafficBody or .light sizes need to change for smaller screens,
+   media queries can be added here.
+*/
+
+/* Pedestrian Signal Styles */
+.ped-light {
+  font-size: 1.5rem;
   font-weight: bold;
-}
-
-.controls button:hover {
-  opacity: 0.9;
-}
-
-.controls button:active {
-  transform: scale(0.95); /* Click effect */
-}
-
-#greenLightBtn {
-  background-color: #28a745; /* Bootstrap green */
+  padding: 10px 20px;
+  border-radius: 5px;
   color: white;
-}
-
-#yellowLightBtn {
-  background-color: #ffc107; /* Bootstrap yellow */
-  color: #333; /* Darker text for yellow button for contrast */
-}
-
-#stopLightBtn {
-  background-color: #dc3545; /* Bootstrap red */
-  color: white;
-}
-
-footer {
-  margin-top: auto; /* Pushes footer to the bottom */
-  background-color: #333;
-  color: #fff;
+  display: inline-block;
+  min-width: 180px; /* Ensure consistent width */
   text-align: center;
-  padding: 1em 0;
-  width: 100%;
-  font-size: 0.9em;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Responsive adjustments */
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.5em;
-  }
+.ped-dont-walk {
+  background-color: #dc3545; /* Bootstrap danger red */
+  border: 2px solid #b02a37;
+}
 
+.ped-walk {
+  background-color: #198754; /* Bootstrap success green */
+  border: 2px solid #146c43;
+}
+
+/* Flashing animation for "Don't Walk" - if needed later */
+.ped-flash-dont-walk {
+  background-color: #dc3545;
+  border: 2px solid #b02a37;
+  animation: flashPedWarning 1s infinite;
+}
+
+@keyframes flashPedWarning { /* Renamed to avoid conflict */
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Flashing animation for traffic lights (yellow/red) */
+.flashing-light {
+  animation: flashTrafficLight 1s infinite alternate; /* Alternate makes it flash on/off */
+}
+
+@keyframes flashTrafficLight {
+  from { opacity: 1; }
+  to { opacity: 0.2; } /* Or background-color to #202020 (off state) */
+}
+
+
+@media (max-width: 576px) { /* Bootstrap's sm breakpoint */
   #trafficBody {
     width: 80px;
+    padding: 15px 8px;
+    gap: 10px;
   }
 
   .light {
@@ -147,14 +152,14 @@ footer {
     height: 50px;
   }
 
-  .controls {
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 10px;
+  .controls .btn-group .btn {
+    font-size: 0.875rem; /* Slightly smaller font for smaller buttons */
+    padding: 0.5rem 1rem;
   }
 
-  .controls button {
-    width: 100%; /* Make buttons full width */
-    padding: 15px;
-    font-size: 1em;
+  .ped-light {
+    font-size: 1.2rem;
+    padding: 8px 15px;
+    min-width: 150px;
   }
 }

@@ -1,67 +1,160 @@
-#greenLight {
-  background: #00b807;
-  width: 50px;
-  height: 50px;
-  border-radius: 30px;
-  margin: auto;
-  margin-top: 10px;
-  border: solid 2px;
-  box-shadow:inset 0 6px;
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
-#yellowLight {
-  width: 50px;
-  height: 50px;
-  border-radius: 30px;
-  background: #fab005;
-  margin: auto;
-  margin-top: 10px;
-  border: solid 2px;
-  box-shadow:inset 0 6px;
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1em 0;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#redLight {
-  background: #ff0000;
-  width: 50px;
-  height: 50px;
-  border-radius: 30px;
-  margin: auto;
-  margin-top: 10px;
-  border: solid 2px;
-  box-shadow:inset 0 6px;
+header h1 {
+  margin: 0;
+  font-size: 2em;
 }
 
-#greenLightBtn {
-  margin: 10px;
-  background-color: #00b807;
-  font-size: 18pt;
-  cursor: pointer;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px; /* Max width for content area */
+  box-sizing: border-box;
 }
 
-#yellowLightBtn {
-  background-color: #fab005;
-  font-size: 18pt;
-  cursor: pointer;
-}
-
-#stopLightBtn {
-  background-color: #ff0000;
-  font-size: 18pt;
-  color: aliceblue;
-  margin: 10px;
-  cursor: pointer;
+.traffic-light-section {
+  margin-bottom: 30px;
 }
 
 #trafficBody {
+  background: #4a4a4a; /* Darker grey for traffic light body */
+  width: 100px; /* Slightly wider */
+  padding: 15px 10px; /* Adjusted padding */
+  border-radius: 30px; /* More rounded */
+  height: auto; /* Auto height based on content */
+  border: 3px solid #222; /* Darker border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0,0,0,0.5); /* Softer outer shadow, inner shadow for depth */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between lights */
+}
+
+.light {
+  width: 70px;  /* Larger lights */
+  height: 70px;
+  border-radius: 50%; /* Perfectly round */
   margin: auto;
-  background: #67717b;
-  width: 90px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 20px;
-  height: 210px;
-  border: solid;
-  box-shadow: 2px 2px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  border: 2px solid #111; /* Darker border for lights */
+  background-color: #2b2b2b; /* Default off state - dark grey */
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.5), 0 1px 1px rgba(255,255,255,0.2); /* Inner shadow for depth, slight highlight */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Specific light colors when active - will be controlled by JS */
+#redLight.active {
+  background-color: #ff0000;
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.5), 0 0 20px #ff0000, 0 0 30px #ff0000; /* Added glow effect */
+}
+
+#yellowLight.active {
+  background-color: #fab005;
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.5), 0 0 20px #fab005, 0 0 30px #fab005; /* Added glow effect */
+}
+
+#greenLight.active {
+  background-color: #00b807;
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.5), 0 0 20px #00b807, 0 0 30px #00b807; /* Added glow effect */
+}
+
+
+.controls {
+  display: flex;
+  gap: 15px; /* Space between buttons */
+  margin-top: 20px;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  justify-content: center;
+}
+
+.controls button {
+  padding: 12px 25px; /* Larger padding */
+  font-size: 1.1em; /* Slightly larger font */
+  border-radius: 8px; /* Rounded corners */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+.controls button:hover {
+  opacity: 0.9;
+}
+
+.controls button:active {
+  transform: scale(0.95); /* Click effect */
+}
+
+#greenLightBtn {
+  background-color: #28a745; /* Bootstrap green */
+  color: white;
+}
+
+#yellowLightBtn {
+  background-color: #ffc107; /* Bootstrap yellow */
+  color: #333; /* Darker text for yellow button for contrast */
+}
+
+#stopLightBtn {
+  background-color: #dc3545; /* Bootstrap red */
+  color: white;
+}
+
+footer {
+  margin-top: auto; /* Pushes footer to the bottom */
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+  width: 100%;
+  font-size: 0.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  #trafficBody {
+    width: 80px;
+  }
+
+  .light {
+    width: 50px;
+    height: 50px;
+  }
+
+  .controls {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px;
+  }
+
+  .controls button {
+    width: 100%; /* Make buttons full width */
+    padding: 15px;
+    font-size: 1em;
+  }
 }

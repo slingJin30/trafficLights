@@ -11,25 +11,26 @@
   </head>
 
   <body>
-    <div>
+    <header>
       <h1>Traffic Lights</h1>
-    </div>
-    <div>
-      <div>
+    </header>
+    <main>
+      <section class="traffic-light-section">
         <div id="trafficBody">
-          <div id="redLight"></div>
-          <div id="yellowLight"></div>
-          <div id="greenLight"></div>
+          <div id="redLight" class="light"></div>
+          <div id="yellowLight" class="light"></div>
+          <div id="greenLight" class="light"></div>
         </div>
-      </div>
-      <div>
-        <div>
-          <button id="greenLightBtn" type="button">Green Light</button
-          ><button id="yellowLightBtn">Yellow Light</button
-          ><button id="stopLightBtn">Red Light</button>
-        </div>
-      </div>
-    </div>
+      </section>
+      <nav class="controls">
+        <button id="greenLightBtn" type="button">Green Light</button>
+        <button id="yellowLightBtn" type="button">Yellow Light</button>
+        <button id="stopLightBtn" type="button">Red Light</button>
+      </nav>
+    </main>
+    <footer>
+      <p>&copy; 2024 Traffic Light Simulator</p>
+    </footer>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
